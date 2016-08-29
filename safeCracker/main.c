@@ -12,18 +12,11 @@
 
 void win();
 void lose();
-int runGame(char name);
+int runGame();
 bool shouldPlaygame = 0;
 int main(int argc, const char * argv[]) {
-    fpurge(stdin);
-    printf("What is your name?\n");
-    
-    char name[100] = {'\0'}; // create an array and fill it
-    //bool result = 0;
-    int numberOfItemsScanner = 0;
-    numberOfItemsScanner = scanf("%[^\n]s", name);
     while (shouldPlaygame == 0)
-        runGame(name);
+        runGame();
     return 0;
 
 }
@@ -34,9 +27,17 @@ void win(){
 void lose(){
    printf("You lose!!!\n");
 }
-int runGame(char name){
+int runGame(){
+    fpurge(stdin);
+    printf("What is your name?\n");
+    
+    char name[100] = {'\0'}; // create an array and fill it
+    //bool result = 0;
+    int numberOfItemsScanner = 0;
+    numberOfItemsScanner = scanf("%[^\n]s", name);
     
     printf("Hello %s\n", name);
+    
     
     
     int safeCombo[4] = {
